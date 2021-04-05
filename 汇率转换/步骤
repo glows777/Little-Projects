@@ -1,0 +1,21 @@
+currrencyEl——one amountEl_one还有two的存储currency-one后人amount-one后人amount
+rateEl swap存储rate swap
+
+函数 获取转换信息和API借口，计算变换
+currency_one=currencyEl-one的value 同理 two
+fetch网址,同时在结尾添加one作为1的
+量
+then res=》res。json
+data=》函数｛rate=data。rates【待转换的two】｝
+添加/改变rateEl的文本 innertext $｛｝
+amount_two对的value（那个下面的框的值）=amount_one。value乘以利率（rate） 然后。toFixed（2）
+添加事件监听器
+currencyEl_one change 计算函数
+amountEl_one input 计算函数
+同理two
+swap click callback=
+【
+交换one和two的值
+计算函数
+】
+调用计算函数

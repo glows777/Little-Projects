@@ -1,0 +1,19 @@
+获取html上的值 container，seat中除了occupied，count，total，movieSelect（id=movie）就是那个电影选择的列表那个div
+
+调用渲染的函数 同时设置票价为所选电影的value （因为在HTML中设置了他的value为票价 所以直接赋值就好）“+”代表将字符串转化为Number类型
+
+函数：本地保存选中电影的索引位置和价格 用localStorage.setItem（‘本地存储的变量名’，存储的值）
+
+函数：更新选中的座位和价格 获取获取row的seat类给selectedSeats seatsIndex存储selectedSeats中选中的索引位置（map 依次取索引的位置） 
+seatsIndex本地存储为SelectedSeatgs（因为保存在本地 所以要转化为JSON的字符串形式） 
+所以选中电影的数量selectedSeatsCount就是selectedSeats的长度 从而总金额也可知 后将金额和电影座位的索引存储在本地 
+
+函数 渲染：取本地存储的selectSeats给selecetSeats，判断这个字符串是否为空且长度大于0.
+是，则用forEach依次遍历这个里面的seat，然后seat增加一个类名（selected） 
+然后取所选电影的索引（selectedMovieIndex）给selectedMovieindex 然后判断这个索引是否为空，不为空则将其赋值给movieSelect的选择电影索引
+
+选择看的电影事件：票价是当前选择电影的value（用+号转化为number类型） 然后调用设置存储电影索引位置和金额的函数 调用更新函数
+
+选择电影座位的事件：判断container中是有有类名seat同时不是occupied 是则将点击的这个座位增加类 selected 调用更新函数
+
+调用更新函数 初始化座位和金额

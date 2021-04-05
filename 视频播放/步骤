@@ -1,0 +1,12 @@
+play video syops progress timestamp获取这些元素
+函数判断是否播放 若停止，则播放 反之 则暂停
+更新播放的形状 若为暂停 则为<i class=“fa fa-play fa-2x”> 反正，则为。。。。 记得用innerHTML
+更新进度条 progress的value等于video的currentTime/duration 乘以100 记得用Math。floor
+获取分钟数 mins=math。。。。currenttime/60 如果mins《10 拼接个0 给他
+获取秒数 同理 但是是currenttime%60 判断 然后timestamp的innerHTMl是``${mins}:${secs}`(和更新进度条和分钟数是同一个函数)
+函数设置进度条： currenttime=+progress的value*video的duration 后除以100
+函数停止播放 使得video的cuurenttime是0 然后调用video.paused函数
+添加时间监听器 video有四个 分别是click pause play timeupdate 分别调用开始播放 更新组件 更新组件 更新进度条
+ play一个click 开始播放
+ stop一个click 停止
+ progre 一个 change 设置进度条 
