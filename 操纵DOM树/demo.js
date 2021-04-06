@@ -23,7 +23,7 @@ async function getRandomUser(){
 
 function doubleMoney(){
     data = data.map(user =>{
-        return {...user,money:user.money * 2}
+         return{name:user.name,money:user.money * 2}//此处name：user:user.name可以换为...user
     });
     updateDOM();
 }
@@ -39,7 +39,7 @@ function sortByRichest(){
 }
 
 function calculateWealth(){
-    const wealth = data.reduce((acc,user) => (acc+=user.money));
+    const wealth = data.reduce((acc,user) => (acc+=user.money),0);
     const wealthEl = document.createElement('div');
     wealthEl.innerHTML = `<h3>Total Wealth<strog>${formatMoney(wealth)}</strog></h3>`;
     main.appendChild(wealthEl);
@@ -51,5 +51,21 @@ function addData(obj){
 }
 
 function updateDOM(providedData = data){
-    main.innerHTML=``;
+    main.innerHTML=`<h2><strong>Person</strong>Wealth</h2>`;
+    providedData.forEach(item => {
+        const element = document.createElement('div');
+        element.classList.add('person');
+        element.innerHTML=`<strong>${item.name}</strong>${formatMoney(item.money)}`;
+        main.appendChild(element);
+    });
 }
+
+function formatMoney(number){
+    return '$'+number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g,'$&,');
+}
+
+addUserBtn.addEventListener('click',getRandomUser);
+doubleBtn.addEventListener('click',doubleMoney);
+sortBtn.addEventListener('click',sortByRichest);
+showMillionBtn.addEventListener('click',showMillion);
+calculateWealthBtn.addEventListener('click',calculateWealth);
