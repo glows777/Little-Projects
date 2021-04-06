@@ -51,5 +51,5 @@ function addData(obj){
 }
 
 function updateDOM(providedData = data){
-    main.innerHTML=``
+    main.innerHTML=``;
 }
