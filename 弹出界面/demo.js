@@ -7,9 +7,9 @@ const navbar = document.getElementById('navbar');
 function closeNavbar(e){
     if(
         document.body.classList.contains('show-nav')&&
-        e.target !== toggle&&
-        !toggle.contains(e.target)&&
-        e.target !== navbar&&
+        // e.target !== toggle&&
+        !toggle.contains(e.target)&&//点击其他地方
+        // e.target !== navbar
         !navbar.contains(e.target)
     ){
         document.body.classList.toggle('show-nav');
@@ -21,8 +21,9 @@ function closeNavbar(e){
 }
 
 toggle.addEventListener('click',() =>{
-    document.body.classList.toggle('show-nav');
+    document.body.classList.toggle('show-nav');//点击这个toggle
     document.body.addEventListener('click',closeNavbar);
+    //这个用于点击其他地方返回
 });
 
 open.addEventListener('click',() =>{
