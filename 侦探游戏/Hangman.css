@@ -10,7 +10,7 @@ body{
     align-items: center;
     height: 80vh;
     margin:0;
-    overflow:hiddden;
+    overflow:hidden;
 }
 h1{
     margin:20px 0 0;
@@ -61,7 +61,7 @@ h1{
     height:50px;
     width:20px;
 }
-.popup-cotainer{
+.popup-container{
     background-color: rgba(0,0,0,0.3);
     position:fixed;
     top:0;
