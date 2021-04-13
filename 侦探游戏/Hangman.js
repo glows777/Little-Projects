@@ -5,6 +5,7 @@ const playAgainBtn = document.getElementById('play-button');
 const notifications = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
 const finalMessageRevealWord = document.getElementById('final-message-reveal-word');
+const warns = document.getElementById('warning');
 const figuresParts = document.querySelectorAll('.figure-part');
 
 const words=['application', 'programming', 'interface', 'wizard'];
@@ -60,10 +61,17 @@ function showNotification(){
         notifications.classList.remove('show');
     },2000);
 }
+function showWarns(){
+    warns.innerText = 'Please Enter a right letter!';
+    notifications.classList.add('show');
+    setTimeout(() => {
+        notifications.classList.remove('show');
+    },2000);
+}
 
 window.addEventListener('keydown',e =>{
     if(playable){
-        if(e.keyCode>=65 && e.keyCode<=90){
+        if(e.key>='a' && e.key<='z'){
             const letter = e.key.toLowerCase();
             if(selectedWord.includes(letter)){
                 if(!correctLetters.includes(letter)){
@@ -83,6 +91,9 @@ window.addEventListener('keydown',e =>{
                     showNotification();
                 }
             }
+        }
+        else{
+            showWarns();
         }
     }
 });
