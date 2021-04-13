@@ -108,3 +108,5 @@ playAgainBtn.addEventListener('click',() =>{
     popup.style.display ='none';
 });
 displayWord();
+//写个提示
+//大写小写一样？ 
