@@ -6,6 +6,7 @@ const notifications = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
 const finalMessageRevealWord = document.getElementById('final-message-reveal-word');
 const warns = document.getElementById('warning');
+const noticeBtn = document.getElementById('noticeBtn');
 const figuresParts = document.querySelectorAll('.figure-part');
 
 const words=['application', 'programming', 'interface', 'wizard'];
@@ -61,6 +62,7 @@ function showNotification(){
         notifications.classList.remove('show');
     },2000);
 }
+
 function showWarns(){
     warns.innerText = 'Please Enter a right letter!';
     notifications.classList.add('show');
@@ -68,6 +70,14 @@ function showWarns(){
         notifications.classList.remove('show');
     },2000);
 }
+
+// function showNotice(){
+//     const letter2=selectedWord.split('').filter(el,() =>{
+//         if(correctLetters.includes(el)) return el;
+//     });
+//     const letter3 = letter2[Math.floor(Math.random()*letter2.length)];
+//     wordEl.innerHTML = `<span class="letter">${letter3}</span>`;
+// }
 
 window.addEventListener('keydown',e =>{
     if(playable){
@@ -107,6 +117,9 @@ playAgainBtn.addEventListener('click',() =>{
     updateWrongLetters();
     popup.style.display ='none';
 });
+
+// noticeBtn.addEventListener('click',() => showNotice());
+
 displayWord();
 //写个提示
 //大写小写一样？ 

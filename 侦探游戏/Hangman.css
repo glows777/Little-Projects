@@ -61,6 +61,15 @@ h1{
     height:50px;
     width:20px;
 }
+.noticeBtn{
+    border:2px solid #34495e;
+    border-color: #34495e;
+    background:  #34495e;
+    padding:5px 10px;
+    position: absolute;
+    bottom: -72px;
+    left: 200px;
+}
 .popup-container{
     background-color: rgba(0,0,0,0.3);
     position:fixed;
