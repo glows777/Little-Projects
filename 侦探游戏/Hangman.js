@@ -70,14 +70,16 @@ function showWarns(){
         notifications.classList.remove('show');
     },2000);
 }
-
-// function showNotice(){
-//     const letter2=selectedWord.split('').filter(el,() =>{
-//         if(correctLetters.includes(el)) return el;
-//     });
-//     const letter3 = letter2[Math.floor(Math.random()*letter2.length)];
-//     wordEl.innerHTML = `<span class="letter">${letter3}</span>`;
-// }
+function returnLetter(el){
+    if(!correctLetters.includes(el)) 
+        return el;
+}
+function showNotice(letter2){
+    // let letter2;
+    letter2=selectedWord.split('').filter(el => returnLetter(el));
+    const letter3 = letter2[Math.floor(Math.random()*letter2.length)];
+    wordEl.innerHTML = `<span class="letter">${letter3}</span>`;
+}
 
 window.addEventListener('keydown',e =>{
     if(playable){
@@ -118,7 +120,10 @@ playAgainBtn.addEventListener('click',() =>{
     popup.style.display ='none';
 });
 
-// noticeBtn.addEventListener('click',() => showNotice());
+noticeBtn.addEventListener('click',() =>{
+    let letter2;
+    showNotice(letter2);
+});
 
 displayWord();
 //写个提示
