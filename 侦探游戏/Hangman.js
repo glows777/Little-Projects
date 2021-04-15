@@ -126,5 +126,5 @@ noticeBtn.addEventListener('click',() =>{
 });
 
 displayWord();
-//写个提示
+//写个提示 还没好 合并不进去！！！
 //大写小写一样？ 
