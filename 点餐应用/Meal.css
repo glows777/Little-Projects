@@ -75,9 +75,11 @@ input[type='text']{
     justify-content: center;
     transition: opacity 0.2s ease-in;
     opacity: 0;
+    /* 设置为透明 然后hover的时候就不透 这样就会hover时显示出来 */
 }
 .meal:hover .meal-info{
     opacity: 1;
+    /* 鼠标悬浮的时候会透明度为1 全不透 */
 }
 .single-meal{
     margin: 30px auto;
@@ -100,7 +102,7 @@ input[type='text']{
     margin: 0;
     letter-spacing: 0.5px;
     /* 行间距letter-spacing和行高line-height */
-    line-height: 1.5px;
+    line-height: 1.5;
 }
 .single-meal ul{
     padding-left:0;
