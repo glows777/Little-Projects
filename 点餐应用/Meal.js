@@ -85,19 +85,26 @@ function addMealToDOM(meal){
         else break;
     }
     //填充内容 用绑定的写法 --》因为这些是变量 
+    
+    // meal.strMeal 菜名
+    // meal.strCateGory 主要原料 meal.strArea是来自哪个国家
+    // class是main的div 是主体的文本内容
+    // meal.strInstructions菜品做法
+    // ingredients数组是菜的一些佐料 其他原料 以及所用的质量
+    
     single_mealEl.innerHTML = `
         <div class="single-meal">
-            //菜名
+            
             <h1>${meal.strMeal}</h1>
             <img src="${meal.strMealThumb}" alt="${meal.strMeal}"/>
-            //菜品的主要原料和来自哪个国家
+            
             <div class="single-meal-info">
                 ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ''}
                 ${meal.strArea?`<p>${meal.strArea}</p>`:''}
             </div>
-            //主体文本内容
+         
             <div class="main">
-                //文字介绍菜品做法
+                
                 <p>${meal.strInstructions}</p>
                 <h2>Ingredients</h2>
                 <ul>
@@ -114,7 +121,7 @@ random.addEventListener('click',getRandomMeal);
 mealsEl.addEventListener('click',e => {
     const mealInfo = e.path.find(item =>{
         // path是当前点击事件路径 即点击图片的路径 然后find会返回包含meal-info的item
-        // 也就是说find 只是做一个判断 判断是否包含类meal-info 同时返回item 
+        // 也就是说find 只是做一个判断 判断是否包含类meal-info 同时返回item 严谨的做法
         if(item.classList){
             return item.classList.contains('meal-info'); //判断是否包含类meal-info 有返回true 没有返回false
         }
