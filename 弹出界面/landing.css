@@ -118,6 +118,7 @@ button:focus{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
+    /* 前面三项 垂直居中 */
     max-width:100%;
     width:400px;
     animation-name:modalopen;

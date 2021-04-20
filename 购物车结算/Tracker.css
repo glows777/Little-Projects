@@ -117,6 +117,7 @@ list li.minus{
     position: absolute;
     top: 50%;
     transform: translate(-100%,-50%);
+    /* 百分比是按照自身长款来移动 */
     opacity: 0;
     transition:opacity 0.3s ease;
 }
