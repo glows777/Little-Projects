@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    *{box-sizing: border-box;}
+    body{
+        background-color: #f7f7f7;
+    }
+    #sbdd{
+        background-color: #fff;
+        box-shadow:6px 6px 6px rgba(0,0,0,0.12);
+        font-size: 15px;
+        padding: 12px;
+        margin: 20px 0;
+        color: #f7f7;
+        border-radius: 5px;
+    }
+    </style>
+    <title>我爱我家</title>
+</head>
+<body>
+    <div id="wdnmd"></div>
+    <button id="sbdd">点我一下</button>
+    <script>
+        const sb = document.getElementById('wdnmd');
+        // timer函数是点击事件中，设置计时器所触发的函数
+        function timer(){
+           let sb2=document.createElement("p");
+           sb.appendChild(sb2);
+           sb2.innerText="我爱我家"
+        }
+        const sbdd = document.getElementById('sbdd');
+        sbdd.addEventListener('click',()=>{
+           var time = setInterval("timer()", 500);}
+        )  
+        
+    </script>
+</body>
+</html>
