@@ -90,6 +90,12 @@ input[type='number']{
     padding:10px;
     width: 100%;
 }
+
+.list{
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
 .list li{
     background-color: #fff;
     box-shadow: var(--box-shadow);
@@ -113,9 +119,10 @@ list li.minus{
     color:#fff;
     font-size:20px;
     line-height: 20px;
-    padding: 2ox 5px;
+    padding: 2px 5px;
     position: absolute;
     top: 50%;
+    left:0;
     transform: translate(-100%,-50%);
     /* 百分比是按照自身长款来移动 */
     opacity: 0;
