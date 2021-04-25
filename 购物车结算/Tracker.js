@@ -40,6 +40,7 @@ function generateID(){
     return Math.floor(Math.random()*100000000);
 }
 
+//渲染History栏的流水账 每一次调用，增加一个
 function addTransactionDOM(transaction){
     const sign = transaction.amount <0 ?'-' : '+';
     const item = document.createElement("li");
@@ -54,6 +55,7 @@ function addTransactionDOM(transaction){
     list.appendChild(item);
 }
 
+// 渲染最上方的金钱数据（包括总账，收入，支出）
 function updateValues(){
     const amounts = transactions.map(transaction => transaction.amount);
     const total = amounts.reduce((acc,item) =>(acc+=item),0).toFixed(2);
@@ -69,11 +71,14 @@ function updateValues(){
     money_plus.innerText = `$${income}`;
     money_minus.innerText = `$${expense}`;
 }
-
+// 通过id匹配来移除History中选中的流水账
 function removeTransaction(id){
     transactions = transactions.filter(transaction => transaction.id!==id);
+    // filter过滤当前出id不是选中id的transaction   相当于更新了记账的数组
     updateLocalStorage();
+    // 更新本地存储数组内容
     init();
+    // 清空所有History的内容，并重新根据新的transaction渲染
 }
 
 function updateLocalStorage(){
@@ -84,6 +89,7 @@ function init(){
     list.innerHTML = '';
     transactions.forEach(addTransactionDOM);
     updateValues();
+    // 渲染完成后，渲染上方balance，income，expense的内容
 }
 
 init();
