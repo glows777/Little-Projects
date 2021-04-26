@@ -61,14 +61,20 @@ h1{
     height:50px;
     width:20px;
 }
+.notice-container{
+    display: flex;
+    justify-content: center;
+    /* 如何让内容紧贴容器下方？ */
+}
 .noticeBtn{
-    border:2px solid #34495e;
-    border-color: #34495e;
-    background:  #34495e;
+    border: none;
+    background:  #a4dff7;
     padding:5px 10px;
     position: absolute;
-    bottom: -72px;
-    left: 200px;
+    bottom: -70px;
+}
+.noticeBtn:focus{
+    outline: 1px solid #34495e;
 }
 .popup-container{
     background-color: rgba(0,0,0,0.3);

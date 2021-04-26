@@ -74,11 +74,29 @@ function returnLetter(el){
     if(!correctLetters.includes(el)) 
         return el;
 }
-function showNotice(letter2){
-    // let letter2;
+
+function showNotice(){
+    let letter2;
     letter2=selectedWord.split('').filter(el => returnLetter(el));
-    const letter3 = letter2[Math.floor(Math.random()*letter2.length)];
-    wordEl.innerHTML = `<span class="letter">${letter3}</span>`;
+    let letter3 = letter2[Math.floor(Math.random()*letter2.length)];
+    
+    //第三种 success
+    correctLetters.push(letter3);
+    displayWord();
+    
+    // 开始没注意到渲染方式是判断填入的单词是否是正确的，
+    // 正确就push进正确的数组，然后正确的话，
+    // 就渲染 答案的所有字母中出现在正确数组中的字母
+    
+    
+    // 第一种 失败
+    // wordEl.innerHTML = `<span class="letter">${letter3}</span>`;
+
+    // 第二种 失败
+    // const text2 = document.createElement('span');
+    // text2.classList.add('letter');
+    // text2.innerHTML = `${letter3}`;
+    // wordEl.appendChild(text2);
 }
 
 window.addEventListener('keydown',e =>{
@@ -120,11 +138,8 @@ playAgainBtn.addEventListener('click',() =>{
     popup.style.display ='none';
 });
 
-noticeBtn.addEventListener('click',() =>{
-    let letter2;
-    showNotice(letter2);
-});
+noticeBtn.addEventListener('click',showNotice);
 
 displayWord();
-//写个提示 还没好 合并不进去！！！
-//大写小写一样？ 
+//notice completed!!!
+//大写小写一样？    
