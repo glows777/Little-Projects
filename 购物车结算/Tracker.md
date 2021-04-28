@@ -72,7 +72,7 @@
 - 调用清空函数
 - 添加submit的事件监听器，callback是添加金额记录
 
-## 操作流程
+## 操作思路
 
 1. 点击add transaction按钮 触发事件
 2. 获取input的值 然后将这些渲染到HIstory中 特判是否合法
