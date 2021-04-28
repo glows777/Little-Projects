@@ -2,9 +2,9 @@
 
 ## 赋值
 
-- musicContainer playBtn prevBtn nextBtn audio progress progressContainer title cover 依次获取元素
-- const一个歌名数组songs 以及歌的索引（这个一开始设置的索引就是默认播放歌曲的索引，后面会变化，所以是变量）
-- 调用加载歌曲loadSong函数 用于初始化，参数是songs[index]===>>>用于获取播放歌曲的src
+1. musicContainer playBtn prevBtn nextBtn audio progress progressContainer title cover 依次获取元素
+2. const一个歌名数组songs 以及歌的索引（这个一开始设置的索引就是默认播放歌曲的索引，后面会变化，所以是变量）
+3. 调用加载歌曲loadSong函数 用于初始化，参数是songs[index]===>>>用于获取播放歌曲的src
 
 ## 函数
 
@@ -67,3 +67,11 @@
 ### progressContainer点击事件 触发点击更改进度条函数
 
 ### aduio音乐播放结束事件（ended），触发播放下一首歌曲函数<<<===这样就会使得音乐播放完成后，自动播放下一首歌曲
+
+## 思路
+
+1. 获取值，设置索引，歌名
+2. 点击播放和更改播放的图标（通过增删类）来实现，暂停同个道理
+3. 实时更新进度条，就获取当前的时间，然后宽度继承（继承比例可以通过当前/总算出来）
+4. 点击进度条更改进度，这个可以先获取点击进度调的X轴位置，然后除以总长度（即容器宽度）再乘以总时间，最后将音频时间改为这个值，即是点击位置的音频时间
+5. 一个trick：播放完后自动播放，可以通过添加监听器结束，然后调用播放下一首的函数实现

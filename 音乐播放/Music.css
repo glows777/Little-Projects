@@ -51,7 +51,7 @@ body{
     animation: rotate 3s linear infinite;
     animation-play-state: paused;
 }
-.music-container.play.img-container img{
+.music-container.play .img-container img{
     animation-play-state:running ;
 }
 @keyframes rotate {
